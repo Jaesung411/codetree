@@ -10,6 +10,7 @@ cells = []
 for i in range(N):
     for j in range(N):
         cells.append((graph[i][j],j,i))
+cells.sort()
 
 for value,x,y in cells:
     for k in range(4):

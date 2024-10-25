@@ -1,8 +1,7 @@
 def is_range(x,y,height, length):
-    return 0 <= x+length < m and 0 <= y+height < n
+    return 0 <= x+length-1 < m and 0 <= y+height-1 < n
 
 def is_positive(x,y,height, length):
-
     for i in range(y,y+height):
         for j in range(x,x+length):
             if graph[i][j] <= 0:

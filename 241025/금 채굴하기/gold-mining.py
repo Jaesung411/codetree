@@ -3,7 +3,7 @@ def in_range(x,y):
 
 #손해 보지 않는 채굴의 금의 개수
 def solve(x,y):
-    ret = 0
+    ret = 1
     #채굴의 크기 k
     for k in range(1,n):
         #범위 안에 채굴되는 위치들

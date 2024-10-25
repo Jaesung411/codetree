@@ -1,5 +1,5 @@
 def is_range(x,y,height, length):
-    return 0 <= x+length-1 < m and 0 <= y+height-1 < n
+    return 0 <= x+length < m and 0 <= y+height < n
 
 def is_positive(x,y,height, length):
 

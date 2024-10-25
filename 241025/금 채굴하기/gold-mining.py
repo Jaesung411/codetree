@@ -23,9 +23,9 @@ def solve(x,y):
         cost = m * n_gold - (k*k+(k+1)*(k+1))
         if cost<0:
             continue
-        if n_gold == 4: 
-            print(shapes,len(shapes))
-            print(x,y,k,cost)
+        # if n_gold == 4: 
+        #     print(shapes,len(shapes))
+        #     print(x,y,k,cost)
         ret = max(ret,n_gold)
     return ret
         

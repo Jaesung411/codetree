@@ -57,5 +57,5 @@ graph = [list(map(int,input().split())) for _ in range(n)]
 check_board = [[0]*m for _ in range(n)]
 ans = MIN_INT
 
-ans = max(ans,find_max_sum())
+ans = find_max_sum()
 print(ans)

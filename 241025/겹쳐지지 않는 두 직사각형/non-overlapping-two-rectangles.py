@@ -20,14 +20,13 @@ def mark_board(x1,y1,x2,y2):
             check_board[i][j] += 1
 
 def overlapped(x1,y1,x2,y2,x3,y3,x4,y4):
+    clear_board()
     mark_board(x1,y1,x2,y2)
     mark_board(x3,y3,x4,y4)
     for i in range(n):
         for j in range(m):
             if check_board[i][j] >= 2:
-                clear_board()
                 return True
-    clear_board()
     return False
 
 def find_max_sum_with_rect(sx,sy,ex,ey):

@@ -5,7 +5,7 @@ def in_range(x,y):
 def solve(x,y):
     ret = 0
     #채굴의 크기 k
-    for k in range(1,n):
+    for k in range(1,n+1):
         #범위 안에 채굴되는 위치들
         shapes =[]
         for i in range(-k,k+1):
@@ -24,9 +24,7 @@ def solve(x,y):
         cost = m * n_gold - (k*k+(k+1)*(k+1))
         if cost < 0:
             continue
-        # if n_gold == 4: 
-        #     print(shapes,len(shapes))
-        #     print(x,y,k,cost)
+      
         ret = max(ret,n_gold)
     return ret
         
@@ -38,6 +36,7 @@ mx_gold = 0
 for i in range(n):
     for j in range(n):
         mx_gold = max(mx_gold,solve(j,i))
+
 if mx_gold == 0:
     for i in range(n):
         for j in range(n):

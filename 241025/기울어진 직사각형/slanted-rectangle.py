@@ -8,28 +8,23 @@ def possible_square(x,y):
 #(x,y)에서 최댓값 출력
 def solve(x,y):
     s = 0
-    s_1 = 0
-    s_2 = 0
+    ss = [0,0]
     #(x,y)에서 가능한지
     if possible_square(x,y):
         for i in range(4):
-            s_1 += graph[y+dy[i]][x+dx[i]]
-            s_2 += graph[y+dy[i]][x+dx[i]]
+            ss[0] += graph[y+dy[i]][x+dx[i]]
+            ss[1] += graph[y+dy[i]][x+dx[i]]
         
-        nx, ny = x + dx[0], y + dy[0]
-        #연장 가능하다면
-        while possible_square(nx,ny):
-            s_1 += graph[ny-2][nx]
-            s_1 += graph[ny-1][nx+1]
-            nx, ny = nx + dx[0], ny + dy[0]
+        for sn, dxn, dyn in [(0,1,-1),(1,-1,-1)]:
+            nx, ny = x + dxn, y + dyn
+            #연장 가능하다면
+            while possible_square(nx,ny):
+                ss[sn] += graph[ny-2][nx]
+                ss[sn] += graph[ny+dxn][nx+dyn]
+                nx, ny = nx + dxn, ny + dyn
+                
+        s = max(ss)
 
-        nx, ny = x - 1, y - 1
-        #연장 가능하다면
-        while possible_square(nx,ny):
-            s_2 += graph[ny-2][nx]
-            s_2 += graph[ny-1][nx-1]
-            nx, ny = nx - 1, ny - 1
-        s = max(s_1,s_2)
     return s
 
 N = int(input())

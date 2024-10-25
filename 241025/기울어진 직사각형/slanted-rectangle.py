@@ -8,18 +8,28 @@ def possible_square(x,y):
 #(x,y)에서 최댓값 출력
 def solve(x,y):
     s = 0
+    s_1 = 0
+    s_2 = 0
     #(x,y)에서 가능한지
     if possible_square(x,y):
         for i in range(4):
-            s += graph[y+dy[i]][x+dx[i]]
+            s_1 += graph[y+dy[i]][x+dx[i]]
+            s_2 += graph[y+dy[i]][x+dx[i]]
+        
         nx, ny = x + dx[0], y + dy[0]
         #연장 가능하다면
         while possible_square(nx,ny):
-            s += graph[ny-2][nx]
-            s += graph[ny-1][nx+1]
+            s_1 += graph[ny-2][nx]
+            s_1 += graph[ny-1][nx+1]
             nx, ny = nx + dx[0], ny + dy[0]
-    if s == 19:
-        print(x,y)
+
+        nx, ny = x - 1, y - 1
+        #연장 가능하다면
+        while possible_square(nx,ny):
+            s_2 += graph[ny-2][nx]
+            s_2 += graph[ny-1][nx-1]
+            nx, ny = nx - 1, ny - 1
+        s = max(s_1,s_2)
     return s
 
 N = int(input())

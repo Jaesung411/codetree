@@ -8,9 +8,9 @@ def is_positive(x,y,height, length):
                 return False
     return True
 
-def find_max_size(x,y,height, length):
-    if is_range(x,y,height, length):
-        if is_positive(x,y,height, length):
+def find_max_size(x,y,height,length):
+    if is_range(x,y,height,length):
+        if is_positive(x,y,height,length):
             return height * length
     return 0
 
@@ -22,4 +22,7 @@ for i in range(n):
         for h in range(1,n+1):
             for l in range(1,m+1):
                 ans = max(ans,find_max_size(j,i,h,l))
-print(ans)
+if ans == 0:
+    print(-1)
+else:
+    print(ans)

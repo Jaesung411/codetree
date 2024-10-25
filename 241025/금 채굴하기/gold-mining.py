@@ -3,7 +3,7 @@ def in_range(x,y):
 
 #손해 보지 않는 채굴의 금의 개수
 def solve(x,y):
-    ret = 0
+    ret = 1
     #채굴의 크기 k
     for k in range(1,n):
         #범위 안에 채굴되는 위치들
@@ -19,7 +19,6 @@ def solve(x,y):
         for px,py in shapes:
             if graph[py][px] == 1:
                 n_gold += 1
-                ret = 1
 
         # 비용 계산
         cost = m * n_gold - (k*k+(k+1)*(k+1))
@@ -39,4 +38,9 @@ mx_gold = 0
 for i in range(n):
     for j in range(n):
         mx_gold = max(mx_gold,solve(j,i))
+if mx_gold == 0:
+    for i in range(n):
+        for j in range(n):
+            if graph[i][j] == 1:
+                mx_gold = 1
 print(mx_gold)

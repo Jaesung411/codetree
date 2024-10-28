@@ -10,13 +10,13 @@ r, c, m1, m2, m3, m4, d = map(int,input().split())
 r-=1
 c-=1
 
+temp = grid[r][c]
+cx = c 
+cy = r
 #반시계
 if d == 0:
     dx = [-1,1,1,-1]
     dy = [-1,-1,1,1]
-    temp = grid[r][c]
-    cx = c 
-    cy = r
 
     for i, m in enumerate([m4,m3,m2,m1]):
         for j in range(m):
@@ -29,9 +29,6 @@ if d == 0:
 else:
     dx = [1,-1,-1,1]
     dy = [-1,-1,1,1]
-    temp = grid[r][c]
-    cx = c 
-    cy = r
 
     for i, m in enumerate([m1,m2,m3,m4]):
         for j in range(m):

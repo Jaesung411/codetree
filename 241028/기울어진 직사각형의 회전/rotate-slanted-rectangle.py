@@ -27,8 +27,8 @@ if d == 0:
                 cx, cy = nx, ny
     grid[r-1][c+1] = temp
 else:
-    dx = [1,1,-1,-1]
-    dy = [-1,1,1,-1]
+    dx = [1,-1,-1,1]
+    dy = [-1,-1,1,1]
     temp = grid[r][c]
     cx = c 
     cy = r

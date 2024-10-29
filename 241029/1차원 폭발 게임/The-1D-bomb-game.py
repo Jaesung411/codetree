@@ -22,13 +22,13 @@ while True:
             for i in range(start,end+1):
                 numbers[i] = 0
         
-        temp = []
-        for i in range(len(numbers)):
-            if numbers[i] != 0:
-                temp.append(numbers[i])
+    temp = []
+    for i in range(len(numbers)):
+        if numbers[i] != 0:
+            temp.append(numbers[i])
 
-        numbers = temp.copy() 
-    
+    numbers = temp.copy() 
+    # print(numbers)
     if not did_explore:
         break
 print(len(numbers))

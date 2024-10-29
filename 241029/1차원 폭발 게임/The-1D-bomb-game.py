@@ -32,3 +32,5 @@ while True:
     if not did_explore:
         break
 print(len(numbers))
+for e in numbers:
+    print(e)

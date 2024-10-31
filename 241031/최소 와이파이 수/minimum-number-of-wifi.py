@@ -5,7 +5,7 @@ ans = 0
 i = 0
 while i < N:
     if people[i]:
-        i+= 2*M+1
+        i+= 2*M
         ans+=1 
     i+=1
 # for i in range(N):

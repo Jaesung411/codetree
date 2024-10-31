@@ -7,6 +7,8 @@ while i != N:
     if people[i]:
         i+= 2*M+1
         ans+=1
+    else:
+        i+=1
 # for i in range(N):
 #     if people[i] and not poss_internet[i]:
 #         for j in range(i,i+2*M+1):

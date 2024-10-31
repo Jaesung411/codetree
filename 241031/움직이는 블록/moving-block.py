@@ -28,7 +28,7 @@ for i in range(N):
                 n_move += mx_move
             else:
                 temp.append(blocks[j]+possible_move)
-                n_move += mx_move-possible_move
+                n_move += possible_move
                 possible_move = 0
     temp[i] = avg + possible_move
     blocks = temp

@@ -31,19 +31,21 @@ if direction == 'L':
 elif direction == 'R':
     for i in range(4):
         ret.append(list(reversed(move_left(list(reversed(grid[i]))))))
-ret=[[],[],[],[]]
+temp2=[[],[],[],[]]
 if direction == 'U':
     for i in range(4):
         rotate_l = [grid[j][i] for j in range(4)]
-        temp = move_left(rotate_l)
+        temp2 = move_left(rotate_l)
         for k in range(4):
-            ret[k].append(temp[k])
+            ret[k].append(temp2[k])
 elif direction == 'D':
     for i in range(4):
-        rotate_l = [grid[j][i] for j in range(4)]
-        temp = move_left(list(reversed(move_left(list(reversed(rotate_l))))))
+        rotate_l = [grid[3-j][i] for j in range(4)]
+        temp = move_left(rotate_l)
         for k in range(4):
-            ret[k].append(temp[k])
-            
+            temp2[k].append(temp[k])
+    for i in range(4):
+        ret.append(temp2[3-i])
+
 for i in range(4):
     print(" ".join(map(str,ret[i])))
